@@ -5,5 +5,5 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php --2 --install-dir=/opt/bitnami/php/bin --filename=composer
 RUN php -r "unlink('composer-setup.php');"
 
-# RUN apt-get update && \
-    # apt-get install -y git openssh-client
+RUN apt-get update && \
+    apt-get install -y git openssh-client
