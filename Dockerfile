@@ -6,4 +6,8 @@ RUN php composer-setup.php --2 --install-dir=/opt/bitnami/php/bin --filename=com
 RUN php -r "unlink('composer-setup.php');"
 
 RUN apt-get update && \
-    apt-get install -y git openssh-client
+    apt-get install -y git openssh-client curl
+
+RUN curl -sL https://deb.nodesource.com/setup_15.x | bash
+RUN apt-get install -y nodejs
+RUN npm install -g yarn shipit-deploy shipit-cli
